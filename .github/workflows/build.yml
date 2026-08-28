@@ -1,0 +1,68 @@
+name: Build TRPGCharacter
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Find Maven project
+        id: project
+        shell: bash
+        run: |
+          POM="$(find . -maxdepth 4 -name pom.xml -print -quit)"
+
+          if [ -z "$POM" ]; then
+            echo "ERROR: pom.xml が見つかりません。"
+            echo "Repository files:"
+            find . -maxdepth 4 -type f | sort
+            exit 1
+          fi
+
+          DIR="$(dirname "$POM")"
+
+          echo "pom=$POM" >> "$GITHUB_OUTPUT"
+          echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+
+          echo "Found pom.xml: $POM"
+          echo "Maven working directory: $DIR"
+
+      - name: Build with Maven
+        working-directory: ${{ steps.project.outputs.dir }}
+        run: mvn -B clean package
+
+      - name: Find built JAR
+        id: jar
+        shell: bash
+        run: |
+          JAR="$(find "${{ steps.project.outputs.dir }}/target"             -maxdepth 1             -type f             -name '*.jar'             ! -name '*sources.jar'             ! -name '*javadoc.jar'             -print -quit)"
+
+          if [ -z "$JAR" ]; then
+            echo "ERROR: ビルド済みJARが見つかりません。"
+            find "${{ steps.project.outputs.dir }}/target" -maxdepth 2 -type f | sort || true
+            exit 1
+          fi
+
+          echo "path=$JAR" >> "$GITHUB_OUTPUT"
+          echo "Built JAR: $JAR"
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRPGCharacter-Paper-1.20.1
+          path: ${{ steps.jar.outputs.path }}
+          if-no-files-found: error
