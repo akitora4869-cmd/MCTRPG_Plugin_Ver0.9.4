@@ -1,0 +1,91 @@
+# TRPG戦闘用武器設定
+#
+# 未登録のアイテムは従来のMinecraft攻撃処理を使用します。
+# 登録した武器は 1d100技能判定 → ダメージダイス → DB → 装甲 の順で処理します。
+#
+# damage-bonus: true で STR+SIZ によるCoC6系DBを加算します。
+
+enabled: true
+allow-player-vs-player: true
+
+# 近接攻撃時に通常の命中技能と同時に自動判定します。
+# 両方成功した場合、装甲適用前のダメージを倍率分だけ増やします。
+martial-arts:
+  enabled: true
+  skill: "martial_arts"
+  damage-multiplier: 2
+
+# 攻撃を受ける際の自動回避。
+# 10秒以内に連続して回避するほど成功値が20ずつ低下します。
+# 決定的成功時は、手に持っている登録武器で自動反撃します。
+dodge:
+  enabled: true
+  skill: "dodge"
+  chain-window-seconds: 10
+  penalty-per-extra-use: 20
+  minimum-success-value: 1
+  critical-counterattack: true
+
+result-rules:
+  # クリティカル時は武器ダイスと正のDBを最大値として扱う
+  critical-max-damage: true
+
+  # スペシャル成功時の固定ボーナス
+  special-flat-bonus: 1
+
+fist:
+  name: "こぶし"
+  skill: "fist"
+  damage: "1d3"
+  damage-bonus: true
+  martial-arts: true
+
+kick:
+  name: "キック"
+  skill: "kick"
+  damage: "1d6"
+  damage-bonus: true
+  martial-arts: true
+
+weapons:
+  WOODEN_SWORD:
+    name: "木の剣"
+    skill: "sword"
+    damage: "1d4"
+    damage-bonus: true
+    martial-arts: true
+
+  STONE_SWORD:
+    name: "石の剣"
+    skill: "sword"
+    damage: "1d6"
+    damage-bonus: true
+    martial-arts: true
+
+  IRON_SWORD:
+    name: "鉄の剣"
+    skill: "sword"
+    damage: "1d8+1"
+    damage-bonus: true
+    martial-arts: true
+
+  GOLDEN_SWORD:
+    name: "金の剣"
+    skill: "sword"
+    damage: "1d8+1"
+    damage-bonus: true
+    martial-arts: true
+
+  DIAMOND_SWORD:
+    name: "ダイヤモンドの剣"
+    skill: "sword"
+    damage: "1d8+1"
+    damage-bonus: true
+    martial-arts: true
+
+  NETHERITE_SWORD:
+    name: "ネザライトの剣"
+    skill: "sword"
+    damage: "1d8+1"
+    damage-bonus: true
+    martial-arts: true

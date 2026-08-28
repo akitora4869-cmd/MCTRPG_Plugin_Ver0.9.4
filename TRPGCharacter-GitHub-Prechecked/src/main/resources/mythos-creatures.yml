@@ -1,0 +1,31 @@
+# 神話生物設定
+# /mythos summon <id> でKP/管理者が召喚できます。
+#
+# 召喚された個体だけが神話生物として扱われます。
+# 同じEntityTypeの通常Mobには影響しません。
+
+enabled: true
+
+# 周囲の神話生物を確認する周期。20tick = 1秒
+encounter-check-interval: 10
+
+mythos-creatures:
+
+  deep_one:
+    name: "深きもの"
+    entity: DROWNED
+
+    # CoC向け戦闘値
+    hp: 13
+    armor: 1
+    hit: 25
+    damage: "1d6"
+    player-armor: true
+
+    # 初めて視認した際のSANチェック
+    san-check:
+      success: "0"
+      failure: "1d6"
+
+    encounter-range: 12.0
+    require-line-of-sight: true

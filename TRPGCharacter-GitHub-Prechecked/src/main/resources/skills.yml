@@ -1,0 +1,268 @@
+# CoC第6版向け技能設定
+#
+# 探索者シートでは、CoC6版に近い
+# 「戦闘技能 → 探索技能 → 行動技能 → 交渉技能 → 知識技能」
+# の順で表示します。
+#
+# default は数字のほか "EDU*5" / "DEX*2" のような能力値式にも対応します。
+
+skills:
+  # ---------------- 戦闘技能 ----------------
+  dodge:
+    name: "回避"
+    default: "DEX*2"
+    category: "戦闘技能"
+
+  kick:
+    name: "キック"
+    default: 25
+    category: "戦闘技能"
+
+  fist:
+    name: "こぶし"
+    default: 50
+    category: "戦闘技能"
+
+  martial_arts:
+    name: "マーシャルアーツ"
+    default: 1
+    category: "戦闘技能"
+
+  sword:
+    name: "刀剣"
+    default: 20
+    category: "戦闘技能"
+
+  # ---------------- 探索技能 ----------------
+  first_aid:
+    name: "応急手当"
+    default: 30
+    category: "探索技能"
+
+  locksmith:
+    name: "鍵開け"
+    default: 1
+    category: "探索技能"
+
+  conceal:
+    name: "隠す"
+    default: 15
+    category: "探索技能"
+
+  hide:
+    name: "隠れる"
+    default: 10
+    category: "探索技能"
+
+  listen:
+    name: "聞き耳"
+    default: 25
+    category: "探索技能"
+
+  sneak:
+    name: "忍び歩き"
+    default: 10
+    category: "探索技能"
+
+  photography:
+    name: "写真術"
+    default: 10
+    category: "探索技能"
+
+  psychoanalysis:
+    name: "精神分析"
+    default: 1
+    category: "探索技能"
+
+  track:
+    name: "追跡"
+    default: 10
+    category: "探索技能"
+
+  library_use:
+    name: "図書館"
+    default: 25
+    category: "探索技能"
+
+  spot_hidden:
+    name: "目星"
+    default: 25
+    category: "探索技能"
+
+  # ---------------- 行動技能 ----------------
+  drive_auto:
+    name: "運転（自動車）"
+    default: 20
+    category: "行動技能"
+
+  mechanical_repair:
+    name: "機械修理"
+    default: 20
+    category: "行動技能"
+
+  operate_heavy_machinery:
+    name: "重機械操作"
+    default: 1
+    category: "行動技能"
+
+  ride:
+    name: "乗馬"
+    default: 5
+    category: "行動技能"
+
+  swim:
+    name: "水泳"
+    default: 25
+    category: "行動技能"
+
+  art:
+    name: "芸術"
+    default: 5
+    category: "行動技能"
+
+  craft:
+    name: "製作"
+    default: 5
+    category: "行動技能"
+
+  pilot:
+    name: "操縦"
+    default: 1
+    category: "行動技能"
+
+  jump:
+    name: "跳躍"
+    default: 25
+    category: "行動技能"
+
+  electrical_repair:
+    name: "電気修理"
+    default: 10
+    category: "行動技能"
+
+  navigate:
+    name: "ナビゲート"
+    default: 10
+    category: "行動技能"
+
+  disguise:
+    name: "変装"
+    default: 1
+    category: "行動技能"
+
+  # ---------------- 交渉技能 ----------------
+  fast_talk:
+    name: "言いくるめ"
+    default: 5
+    category: "交渉技能"
+
+  credit_rating:
+    name: "信用"
+    default: 15
+    category: "交渉技能"
+
+  persuade:
+    name: "説得"
+    default: 15
+    category: "交渉技能"
+
+  bargain:
+    name: "値切り"
+    default: 5
+    category: "交渉技能"
+
+  own_language:
+    name: "母国語"
+    default: "EDU*5"
+    category: "交渉技能"
+
+  # ---------------- 知識技能 ----------------
+  medicine:
+    name: "医学"
+    default: 5
+    category: "知識技能"
+
+  occult:
+    name: "オカルト"
+    default: 5
+    category: "知識技能"
+
+  chemistry:
+    name: "化学"
+    default: 1
+    category: "知識技能"
+
+  cthulhu_mythos:
+    name: "クトゥルフ神話"
+    default: 0
+    category: "知識技能"
+
+  accounting:
+    name: "経理"
+    default: 10
+    category: "知識技能"
+
+  archaeology:
+    name: "考古学"
+    default: 1
+    category: "知識技能"
+
+  computer_use:
+    name: "コンピューター"
+    default: 1
+    category: "知識技能"
+
+  psychology:
+    name: "心理学"
+    default: 5
+    category: "知識技能"
+
+  anthropology:
+    name: "人類学"
+    default: 1
+    category: "知識技能"
+
+  biology:
+    name: "生物学"
+    default: 1
+    category: "知識技能"
+
+  geology:
+    name: "地質学"
+    default: 1
+    category: "知識技能"
+
+  astronomy:
+    name: "天文学"
+    default: 1
+    category: "知識技能"
+
+  natural_history:
+    name: "博物学"
+    default: 10
+    category: "知識技能"
+
+  physics:
+    name: "物理学"
+    default: 1
+    category: "知識技能"
+
+  law:
+    name: "法律"
+    default: 5
+    category: "知識技能"
+
+  pharmacy:
+    name: "薬学"
+    default: 1
+    category: "知識技能"
+
+  history:
+    name: "歴史"
+    default: 20
+    category: "知識技能"
+
+  other_language:
+    name: "他の言語"
+    default: 1
+    category: "知識技能"

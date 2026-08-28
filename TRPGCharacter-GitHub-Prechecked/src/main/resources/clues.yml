@@ -1,0 +1,14 @@
+blood:
+  display-name: "血痕"
+  range: 10
+  duration: 30
+  text:
+    - "床には乾いた血痕が残っている。"
+    - "よく見ると、廊下の奥へ続いている。"
+
+bookshelf:
+  display-name: "古い本棚"
+  range: 8
+  duration: 30
+  text:
+    - "本棚の奥に不自然な隙間がある。"

@@ -1,0 +1,321 @@
+# CoC6系TRPG戦闘向け 敵バランス
+#
+# hp            : Mobの最大HP
+# hit           : 攻撃の1d100命中率
+# damage        : 命中時のダメージダイス
+# armor         : プレイヤーから攻撃された時の固定装甲
+# player-armor  : Mobの攻撃に探索者側の装甲を適用するか
+#
+# 未登録Mobは従来のMinecraft挙動 / damage.yml の処理を使用します。
+
+enabled: true
+show-rolls-to-target: true
+
+result-rules:
+  critical-max-damage: true
+  special-flat-bonus: 1
+
+enemies:
+  ZOMBIE:
+    name: "ゾンビ"
+    hp: 12
+    hit: 45
+    damage: "1d4"
+    armor: 0
+    player-armor: true
+
+  ZOMBIE_VILLAGER:
+    name: "村人ゾンビ"
+    hp: 12
+    hit: 45
+    damage: "1d4"
+    armor: 0
+    player-armor: true
+
+  HUSK:
+    name: "ハスク"
+    hp: 13
+    hit: 45
+    damage: "1d4+1"
+    armor: 0
+    player-armor: true
+
+  DROWNED:
+    name: "ドラウンド"
+    hp: 12
+    hit: 50
+    damage: "1d4+1"
+    armor: 0
+    player-armor: true
+
+  SKELETON:
+    name: "スケルトン"
+    hp: 10
+    hit: 45
+    damage: "1d6"
+    armor: 0
+    player-armor: true
+
+  STRAY:
+    name: "ストレイ"
+    hp: 11
+    hit: 50
+    damage: "1d6"
+    armor: 0
+    player-armor: true
+
+  SPIDER:
+    name: "クモ"
+    hp: 9
+    hit: 50
+    damage: "1d3"
+    armor: 0
+    player-armor: true
+
+  CAVE_SPIDER:
+    name: "洞窟グモ"
+    hp: 7
+    hit: 50
+    damage: "1d3"
+    armor: 0
+    player-armor: true
+
+  CREEPER:
+    name: "クリーパー"
+    hp: 10
+    hit: 100
+    damage: "2d6"
+    armor: 0
+    player-armor: true
+
+  ENDERMAN:
+    name: "エンダーマン"
+    hp: 16
+    hit: 55
+    damage: "1d6+1"
+    armor: 1
+    player-armor: true
+
+  WITCH:
+    name: "ウィッチ"
+    hp: 11
+    hit: 45
+    damage: "1d6"
+    armor: 0
+    player-armor: true
+
+  PILLAGER:
+    name: "ピリジャー"
+    hp: 12
+    hit: 50
+    damage: "1d8"
+    armor: 0
+    player-armor: true
+
+  VINDICATOR:
+    name: "ヴィンディケーター"
+    hp: 14
+    hit: 60
+    damage: "1d8+1"
+    armor: 1
+    player-armor: true
+
+  EVOKER:
+    name: "エヴォーカー"
+    hp: 14
+    hit: 55
+    damage: "1d6+2"
+    armor: 0
+    player-armor: false
+
+  VEX:
+    name: "ヴェックス"
+    hp: 8
+    hit: 55
+    damage: "1d4+1"
+    armor: 0
+    player-armor: true
+
+  RAVAGER:
+    name: "ラヴェジャー"
+    hp: 24
+    hit: 60
+    damage: "2d6"
+    armor: 2
+    player-armor: true
+
+  PIGLIN:
+    name: "ピグリン"
+    hp: 12
+    hit: 50
+    damage: "1d6"
+    armor: 0
+    player-armor: true
+
+  PIGLIN_BRUTE:
+    name: "ピグリンブルート"
+    hp: 18
+    hit: 60
+    damage: "1d8+1"
+    armor: 1
+    player-armor: true
+
+  ZOMBIFIED_PIGLIN:
+    name: "ゾンビピグリン"
+    hp: 14
+    hit: 55
+    damage: "1d6+1"
+    armor: 1
+    player-armor: true
+
+  HOGLIN:
+    name: "ホグリン"
+    hp: 16
+    hit: 55
+    damage: "1d8"
+    armor: 1
+    player-armor: true
+
+  ZOGLIN:
+    name: "ゾグリン"
+    hp: 18
+    hit: 55
+    damage: "1d8"
+    armor: 1
+    player-armor: true
+
+  BLAZE:
+    name: "ブレイズ"
+    hp: 12
+    hit: 50
+    damage: "1d6"
+    armor: 1
+    player-armor: true
+
+  GHAST:
+    name: "ガスト"
+    hp: 10
+    hit: 55
+    damage: "2d6"
+    armor: 0
+    player-armor: true
+
+  MAGMA_CUBE:
+    name: "マグマキューブ"
+    hp: 10
+    hit: 50
+    damage: "1d6"
+    armor: 1
+    player-armor: true
+
+  SLIME:
+    name: "スライム"
+    hp: 8
+    hit: 45
+    damage: "1d4"
+    armor: 0
+    player-armor: true
+
+  GUARDIAN:
+    name: "ガーディアン"
+    hp: 14
+    hit: 55
+    damage: "1d6"
+    armor: 1
+    player-armor: true
+
+  ELDER_GUARDIAN:
+    name: "エルダーガーディアン"
+    hp: 24
+    hit: 65
+    damage: "2d6"
+    armor: 3
+    player-armor: true
+
+  SHULKER:
+    name: "シュルカー"
+    hp: 14
+    hit: 50
+    damage: "1d6"
+    armor: 3
+    player-armor: true
+
+  PHANTOM:
+    name: "ファントム"
+    hp: 10
+    hit: 50
+    damage: "1d4"
+    armor: 0
+    player-armor: true
+
+  SILVERFISH:
+    name: "シルバーフィッシュ"
+    hp: 6
+    hit: 45
+    damage: "1d3"
+    armor: 0
+    player-armor: true
+
+  ENDERMITE:
+    name: "エンダーマイト"
+    hp: 6
+    hit: 45
+    damage: "1d3"
+    armor: 0
+    player-armor: true
+
+  WITHER_SKELETON:
+    name: "ウィザースケルトン"
+    hp: 18
+    hit: 60
+    damage: "1d8+1"
+    armor: 2
+    player-armor: true
+
+  IRON_GOLEM:
+    name: "アイアンゴーレム"
+    hp: 25
+    hit: 60
+    damage: "2d6"
+    armor: 3
+    player-armor: true
+
+  POLAR_BEAR:
+    name: "シロクマ"
+    hp: 14
+    hit: 50
+    damage: "1d6"
+    armor: 0
+    player-armor: true
+
+  WOLF:
+    name: "オオカミ"
+    hp: 8
+    hit: 45
+    damage: "1d3"
+    armor: 0
+    player-armor: true
+
+  WITHER:
+    name: "ウィザー"
+    hp: 40
+    hit: 70
+    damage: "2d6+2"
+    armor: 4
+    player-armor: true
+
+  ENDER_DRAGON:
+    name: "エンダードラゴン"
+    hp: 45
+    hit: 65
+    damage: "2d6+2"
+    armor: 4
+    player-armor: true
+
+  WARDEN:
+    name: "ウォーデン"
+    hp: 35
+    hit: 70
+    damage: "2d6+3"
+    armor: 5
+    player-armor: true

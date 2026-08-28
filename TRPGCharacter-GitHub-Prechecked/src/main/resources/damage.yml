@@ -1,0 +1,234 @@
+# TRPG式ダメージ設定
+#
+# damage は以下の形式に対応します。
+#   1
+#   1d3
+#   1d6+2
+#   2d6
+#
+# mobs:
+#   EntityType名で指定します。
+#
+# environment:
+#   EntityDamageEvent.DamageCause名で指定します。
+#
+# 値を変更後はサーバーを再起動するか /status reload を実行してください。
+
+enabled: true
+
+# Minecraft標準の満腹度による自然回復を無効化
+disable-natural-regeneration: true
+
+# 短時間に連続発生する接触系ダメージは完全に0にする。
+# CONTACT: スイートベリー・サボテンなど
+# HOT_FLOOR: マグマブロック
+zero-damage-causes:
+  - CONTACT
+  - HOT_FLOOR
+
+# mobs に登録されていない攻撃者の標準値
+default:
+  name: "攻撃"
+  damage: "1d3"
+
+mobs:
+  ZOMBIE:
+    name: "ゾンビのこぶし"
+    damage: "1d3"
+    armor: true
+
+  HUSK:
+    name: "ハスクのこぶし"
+    damage: "1d3"
+    armor: true
+
+  DROWNED:
+    name: "ドラウンドの打撃"
+    damage: "1d4"
+    armor: true
+
+  SKELETON:
+    name: "スケルトンの弓"
+    damage: "1d4"
+    armor: true
+
+  STRAY:
+    name: "ストレイの弓"
+    damage: "1d4"
+    armor: true
+
+  SPIDER:
+    name: "クモの噛みつき"
+    damage: "1d3"
+    armor: true
+
+  CAVE_SPIDER:
+    name: "洞窟グモの噛みつき"
+    damage: "1d3"
+    armor: true
+
+  CREEPER:
+    name: "クリーパーの爆発"
+    damage: "2d6"
+    armor: true
+
+  ENDERMAN:
+    name: "エンダーマンの打撃"
+    damage: "1d6"
+    armor: true
+
+  WITCH:
+    name: "ウィッチの攻撃"
+    damage: "1d4"
+    armor: true
+
+  PILLAGER:
+    name: "ピリジャーのクロスボウ"
+    damage: "1d6"
+    armor: true
+
+  VINDICATOR:
+    name: "ヴィンディケーターの斧"
+    damage: "1d8"
+    armor: true
+
+  RAVAGER:
+    name: "ラヴェジャーの突進"
+    damage: "2d6"
+    armor: true
+
+  BLAZE:
+    name: "ブレイズの火球"
+    damage: "1d6"
+    armor: true
+
+  GHAST:
+    name: "ガストの火球"
+    damage: "2d6"
+    armor: true
+
+  WITHER_SKELETON:
+    name: "ウィザースケルトンの攻撃"
+    damage: "1d6"
+    armor: true
+
+  WARDEN:
+    name: "ウォーデンの攻撃"
+    damage: "3d6"
+    armor: true
+
+  PLAYER:
+    name: "プレイヤーの攻撃"
+    damage: "1d3"
+    armor: true
+
+environment:
+  FALL:
+    name: "落下"
+    armor: false
+
+    # CoC6系の落下処理
+    # 3ブロックまでは無傷。それを超えると約3ブロックごとに1d6。
+    # 跳躍成功でダメージダイスを1個減らす。
+    safe-blocks: 3.0
+    blocks-per-die: 3.0
+    max-dice: 8
+    jump-skill: "jump"
+    jump-success-reduce-dice: 1
+
+  FIRE:
+    name: "炎"
+    damage: "1"
+    armor: false
+    cooldown-seconds: 3
+
+  FIRE_TICK:
+    name: "炎上"
+    damage: "1"
+    armor: false
+    cooldown-seconds: 3
+
+  LAVA:
+    name: "溶岩"
+    damage: "1d6"
+    armor: false
+    cooldown-seconds: 3
+
+  DROWNING:
+    name: "溺れ"
+    damage: "1d3"
+    armor: false
+    cooldown-seconds: 5
+
+  SUFFOCATION:
+    name: "窒息"
+    damage: "1d3"
+    armor: false
+    cooldown-seconds: 4
+
+  CONTACT:
+    name: "接触（ベリー・サボテン等）"
+    damage: "0"
+    armor: false
+    cooldown-seconds: 0
+
+  HOT_FLOOR:
+    name: "熱い床（マグマブロック等）"
+    damage: "0"
+    armor: false
+    cooldown-seconds: 0
+
+  FREEZE:
+    name: "凍結"
+    damage: "1d3"
+    armor: false
+    cooldown-seconds: 4
+
+  LIGHTNING:
+    name: "落雷"
+    damage: "2d6"
+    armor: false
+
+  BLOCK_EXPLOSION:
+    name: "爆発"
+    damage: "2d6"
+    armor: true
+
+  ENTITY_EXPLOSION:
+    name: "爆発"
+    damage: "2d6"
+    armor: true
+
+  POISON:
+    name: "毒"
+    damage: "1"
+    armor: false
+    cooldown-seconds: 5
+
+  WITHER:
+    name: "衰弱"
+    damage: "1"
+    armor: false
+    cooldown-seconds: 4
+
+  MAGIC:
+    name: "魔法"
+    damage: "1d6"
+    armor: false
+
+  FALLING_BLOCK:
+    name: "落下物"
+    damage: "1d6"
+    armor: true
+
+  FLY_INTO_WALL:
+    name: "衝突"
+    damage: "1d6"
+    armor: true
+
+  CRAMMING:
+    name: "圧迫"
+    cooldown-seconds: 3
+
+    damage: "1d3"
+    armor: false

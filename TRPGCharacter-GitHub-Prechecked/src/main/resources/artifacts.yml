@@ -1,0 +1,30 @@
+# アーティファクト設定
+# 同じMaterialの通常アイテムには影響しません。
+# /artifact give <player> <id> で作成した個体にだけPDCが付与されます。
+
+artifacts:
+
+  elder_sign:
+    name: "古き印"
+    material: PAPER
+
+    description:
+      - "名状しがたい存在を退けるための印。"
+      - "手に持って右クリックすると力を解放する。"
+
+    passive:
+      # インベントリ内に所持している間、
+      # 神話生物から受ける最終ダメージを固定値軽減。
+      mythos-damage-reduction: 1
+
+    active:
+      enabled: true
+      cooldown-seconds: 30
+
+      # 固定値または 1d3 / 1d6+1 形式
+      san-cost: "1"
+
+      effect:
+        type: REPEL_MYTHOS
+        range: 8.0
+        duration-seconds: 5

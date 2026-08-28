@@ -1,0 +1,64 @@
+name: TRPGCharacter
+version: 1.0.0
+main: Rin.TRPGCharacter.Plugin
+api-version: '1.20'
+author: Rin
+description: CoC 6th character sheet and dice plugin for Paper 1.20.1
+
+commands:
+  status:
+    description: 探索者シートを開きます
+    usage: /status [give|random-confirm|random|revive <player>|reload]
+  roll:
+    description: ダイスを振ります
+    usage: /roll <XdY>
+  trpgedit:
+    description: キャラクターシート内部用コマンド
+    usage: /trpgedit <stat|skill> <id>
+  trpgroll:
+    description: キャラクターシート内部用判定コマンド
+    usage: /trpgroll <stat|skill|derived> <id>
+  trpgcombo:
+    description: 複合技能判定用の内部コマンド
+    usage: /trpgcombo <combo>
+  trpgattack:
+    description: 探索者シートの素手攻撃方法を設定
+    usage: /trpgattack <fist|kick>
+  mythos:
+    description: 神話生物NPCを管理します
+    usage: /mythos <list|summon|sanreset> ...
+  trpgskill:
+    description: 技能ポイントを割り振ります
+    usage: /trpgskill <hobby|hobby-reset> ...
+  artifact:
+    description: アーティファクトを管理します
+    usage: /artifact <list|give|remove> ...
+  kp:
+    description: KP権限を付与します
+    usage: /kp <player>
+
+  kpbook:
+    description: KPブックを開きます
+    usage: /kpbook
+  session:
+    description: TRPGセッションへの参加・退出・終了
+    usage: /session <join|leave|list|time|end>
+  create:
+    description: TRPGセッションを作成します
+    usage: /create session <セッション名> <時間帯>
+  reset:
+    description: 探索者情報を初期化します
+    usage: /reset pc <player> | /reset players
+
+  clue:
+    description: シナリオ用情報ポイントを登録します
+    usage: /clue <mark|hide|show|protect|unprotect|setup> ...
+
+permissions:
+  trpg.admin:
+    description: TRPGCharacterの管理コマンドを使用できます
+    default: op
+
+  trpg.keeper:
+    description: KP機能
+    default: false

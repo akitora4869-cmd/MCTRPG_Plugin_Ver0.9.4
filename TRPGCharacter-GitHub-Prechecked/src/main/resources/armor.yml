@@ -1,0 +1,26 @@
+# TRPG式装甲設定
+# Minecraft防具をCoC風の固定値装甲として扱います。
+#
+# 一式装備時の基準:
+# 革 1 / 金 1 / チェーン 2 / 鉄 2 / ダイヤ 3 / ネザライト 4
+#
+# 混成装備にも対応するため、内部では各部位に重みを持たせて合計し、
+# 最終的な装甲値を四捨五入して算出します。
+#
+# material-values は「一式相当の装甲値」です。
+enabled: true
+
+material-values:
+  LEATHER: 1.0
+  GOLDEN: 1.0
+  CHAINMAIL: 2.0
+  IRON: 2.0
+  DIAMOND: 3.0
+  NETHERITE: 4.0
+
+# 各部位の寄与率。合計1.0。
+slot-weights:
+  HELMET: 0.20
+  CHESTPLATE: 0.40
+  LEGGINGS: 0.30
+  BOOTS: 0.10
